@@ -12,7 +12,7 @@ public class StringCalcClass {
 				return Integer.valueOf(num);
 		}
 			
-		String[] result = num.split(",");
+		String[] result = num.split("(,)|(\n)");
 		int sum = 0;
 		for(int i = 0; i<result.length; i++)
 		{

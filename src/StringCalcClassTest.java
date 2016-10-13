@@ -63,4 +63,15 @@ public class StringCalcClassTest {
 		
 	}
 
+	@Test
+	public void TestBothSeperators() 
+	{
+		StringCalcClass ssc = new StringCalcClass();
+		
+		final int num = ssc.add("1\n2,3");
+		
+		Assert.assertEquals(6, num);
+		
+	}
+	
 }
