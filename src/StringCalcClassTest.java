@@ -51,5 +51,16 @@ public class StringCalcClassTest {
 		Assert.assertEquals(4, num);
 		
 	}
+	
+	@Test
+	public void ManyNumbersInString() 
+	{
+		StringCalcClass ssc = new StringCalcClass();
+		
+		final int num = ssc.add("4,5,6,5");
+		
+		Assert.assertEquals(20, num);
+		
+	}
 
 }
