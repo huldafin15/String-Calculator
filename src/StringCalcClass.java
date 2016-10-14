@@ -1,5 +1,8 @@
 
-public class StringCalcClass {
+
+
+public class StringCalcClass 
+{
 	
 	public int add(String num)
 	{
@@ -14,10 +17,22 @@ public class StringCalcClass {
 			
 		String[] result = num.split("(,)|(\n)");
 		int sum = 0;
+		String neikvadar ="";
 		for(int i = 0; i<result.length; i++)
-		{
-			sum += Integer.valueOf(result[i]);
+		{  
+			if(Integer.valueOf(result[i]) < 0)	
+					{
+						neikvadar += result[i] + ",";
+					}
+			sum += Integer.valueOf(result[i]);	
 		}
-		return sum;		
+		
+		if(neikvadar.length() > 0)
+		{
+		throw new RuntimeException("Negatives not allowed:" + neikvadar);
+		}
+		
+		
+		return sum;			
 	}
 }

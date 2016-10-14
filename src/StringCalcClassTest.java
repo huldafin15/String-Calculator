@@ -74,4 +74,18 @@ public class StringCalcClassTest {
 		
 	}
 	
+	@Test
+	public void NegativeNumbersNotAllowed() 
+	{
+		try 
+		{	
+			StringCalcClass ssc = new StringCalcClass();
+			final int num = ssc.add("2,-4,3,-5");
+		}
+		catch (RuntimeException e)
+		{
+			System.out.println(e.getMessage());
+			Assert.assertEquals(true, e.getMessage().startsWith("Negatives not allowed:"));
+		}
+	}
 }
