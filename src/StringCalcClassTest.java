@@ -80,12 +80,23 @@ public class StringCalcClassTest {
 		try 
 		{	
 			StringCalcClass ssc = new StringCalcClass();
-			final int num = ssc.add("2,-4,3,-5");
+			final int num = ssc.add("2,4,3,5");
 		}
 		catch (RuntimeException e)
 		{
 			System.out.println(e.getMessage());
 			Assert.assertEquals(true, e.getMessage().startsWith("Negatives not allowed:"));
 		}
+	}
+	
+	@Test
+	public void NumbersBiggerThanThousandIgnored() 
+	{
+		StringCalcClass ssc = new StringCalcClass();
+		
+		final int num = ssc.add("1001,2");
+		
+		Assert.assertEquals(2, num);
+		
 	}
 }

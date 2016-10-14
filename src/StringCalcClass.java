@@ -21,10 +21,17 @@ public class StringCalcClass
 		for(int i = 0; i<result.length; i++)
 		{  
 			if(Integer.valueOf(result[i]) < 0)	
-					{
+				{
 						neikvadar += result[i] + ",";
-					}
-			sum += Integer.valueOf(result[i]);	
+				}
+			if(Integer.valueOf(result[i]) < 1000)
+				{
+					sum += Integer.valueOf(result[i]);
+				}
+			else
+				{
+				
+				}	
 		}
 		
 		if(neikvadar.length() > 0)
